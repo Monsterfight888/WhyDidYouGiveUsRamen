@@ -6,7 +6,7 @@ public class TopDownPlayer : MonoBehaviour
 {
     //configurable
     public float speed = 5.0f;
-    public float movementDamping = .8f; //closer to 0 -- responsive, closer to 1 -- smoother
+    public float movementDamping = 0.9f; //closer to 0 -- responsive, closer to 1 -- smoother
     public float interactionRadius = 1.0f;
 
     public LayerMask interactionLayerMask;
@@ -31,7 +31,6 @@ public class TopDownPlayer : MonoBehaviour
 
     public void Update()
     {
-        Vector2 previousMv = moveVector;
         moveVector = Vector2.Lerp(mvAction.ReadValue<Vector2>() * speed, moveVector, movementDamping);
 
 
