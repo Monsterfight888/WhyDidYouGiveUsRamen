@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogueSet:
   - text: 'Have you found your way out of the HUB building? '
     profile: 1
-  - text: Try heading down to the bottom of this building to get out!
+  - text: Try heading down to the bottom of this room to get out!
     profile: 1
   - text: I heard there's some famous cherry trees northeast in the Quad
     profile: 1
