@@ -25,7 +25,7 @@ public class GooseGamemode : MonoBehaviour
     public void Update()
     {
         scoreText.text = "Eggs: " + score;
-        if (score >= 5)
+        if (score >= 2)
         {
             ProgressionManager.singleton.grove = true;
             SceneManager.LoadScene("3-outside-hub");
