@@ -544,7 +544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GooseGamemode
   score: 0
-  scoreText: {fileID: 0}
+  scoreText: {fileID: 904639915}
 --- !u!1 &973958137
 GameObject:
   m_ObjectHideFlags: 0

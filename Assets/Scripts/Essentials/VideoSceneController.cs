@@ -15,5 +15,8 @@ public class VideoSceneController : MonoBehaviour
     void OnVideoFinished(VideoPlayer vp)
     {
         SceneManager.LoadScene("1-Starting Scene");
+        ProgressionManager.singleton.grove = false;
+        ProgressionManager.singleton.drumheller = false;
+        ProgressionManager.singleton.quad = false;
     }
 }

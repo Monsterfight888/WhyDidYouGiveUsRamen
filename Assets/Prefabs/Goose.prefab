@@ -232,7 +232,7 @@ MonoBehaviour:
   moveVector: {x: 0, y: 0}
   moveDir: {x: 0, y: 0}
   dropPref: {fileID: 5548522768456324295, guid: 8580f8fe86a20c246bb521108e0132d6, type: 3}
-  timeBetweenDrop: 0.5
+  timeBetweenDrop: 0.35
   baseSpeed: 0
   sr: {fileID: 2074213098227425630}
 --- !u!95 &6480985192102419149
