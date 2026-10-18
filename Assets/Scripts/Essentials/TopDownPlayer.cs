@@ -2,17 +2,16 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class TopDownPlayer : MonoBehaviour
+
+
+public class TopDownPlayer : TopDownCharacter
 {
-    //configurable
-    public float speed = 5.0f;
-    public float movementDamping = 0.8f; //closer to 0 -- responsive, closer to 1 -- smoother
+
     public float interactionRadius = 1.0f;
 
     public LayerMask interactionLayerMask;
 
-    public Vector2 moveVector;
-    private Rigidbody2D rb;
+
     //input
     private InputActionMap inpAsset;
     private InputAction mvAction;
@@ -20,25 +19,45 @@ public class TopDownPlayer : MonoBehaviour
 
     private Interactable hoveringInteractable;
 
-    public void Start() 
+    private bool MovementLocked => DialogueBox.IsActive;
+
+    public static TopDownPlayer player;
+
+    public void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
+        if(player == null)
+        {
+            player = this;
+        }
+        else
+        {
+            Debug.LogError("TWO PLAYERS EXIST");
+        }
+    }
+
+    public override void Start() 
+    {
+        base.Start();
 
         inpAsset = GetComponent<PlayerInput>().currentActionMap;
         mvAction = inpAsset.FindAction("Movement");
         interactAction = inpAsset.FindAction("Interact");
     }
-
-    public void Update()
+    public override Vector2 CalcMoveVector()
     {
+        if (MovementLocked) // In dialogue or can't talk
+        {
+            return Vector2.zero;
+        }
         moveVector = Vector2.Lerp(mvAction.ReadValue<Vector2>() * speed, moveVector, movementDamping);
 
 
+        return mvAction.ReadValue<Vector2>() * speed;
     }
 
-    public void FixedUpdate()
+    public override void FixedUpdate()
     {
-        rb.linearVelocity = moveVector;
+        base.FixedUpdate();
 
         Collider2D[] interactables = Physics2D.OverlapCircleAll(transform.position, interactionRadius, interactionLayerMask);
 
@@ -59,6 +78,10 @@ public class TopDownPlayer : MonoBehaviour
             Interactable nextInteractable = interactables[minDistIndex].GetComponent<Interactable>();
             if(nextInteractable != hoveringInteractable)
             {
+                if(hoveringInteractable != null)
+                {
+                    hoveringInteractable.OnHover(false);
+                }
                 hoveringInteractable = nextInteractable;
                 hoveringInteractable.OnHover(true);
             }

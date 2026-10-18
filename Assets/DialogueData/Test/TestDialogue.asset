@@ -16,4 +16,14 @@ MonoBehaviour:
   - text: Yeah Im the knight and Im talking and stuff
     profile: 0
   - text: This is true and im james
-    profile: 1
+    profile: 0
+  - text: Im alice 4
+    profile: 0
+  - text: Im alice
+    profile: 2
+  - text: Im alice 2
+    profile: 2
+  - text: Im alice 3
+    profile: 2
+  - text: Im alice 4
+    profile: 2

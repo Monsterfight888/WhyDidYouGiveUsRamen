@@ -4,7 +4,7 @@ public class Interactable : MonoBehaviour
 {
     private SpriteRenderer interactGFX;
 
-    private void Start()
+    public virtual void Start()
     {
         interactGFX = transform.GetChild(0).GetComponent<SpriteRenderer>(); //first child of interactable is the interact gfx
         interactGFX.enabled = false;
