@@ -20,7 +20,7 @@ public class TopDownCharacter : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    public void Update()
+    public virtual void Update()
     {
         moveVector = Vector2.Lerp(CalcMoveVector(), moveVector, movementDamping);
     }
