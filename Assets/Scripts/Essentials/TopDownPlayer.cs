@@ -6,12 +6,12 @@ public class TopDownPlayer : MonoBehaviour
 {
     //configurable
     public float speed = 5.0f;
-    public float movementDamping = 0.9f; //closer to 0 -- responsive, closer to 1 -- smoother
+    public float movementDamping = 0.8f; //closer to 0 -- responsive, closer to 1 -- smoother
     public float interactionRadius = 1.0f;
 
     public LayerMask interactionLayerMask;
 
-    private Vector2 moveVector;
+    public Vector2 moveVector;
     private Rigidbody2D rb;
     //input
     private InputActionMap inpAsset;

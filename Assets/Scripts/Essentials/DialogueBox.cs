@@ -5,14 +5,17 @@ public class DialogueBox : MonoBehaviour
 {
     //to set
     public Text boxText;
+    public Text nameText;
     public Image profileImage;
 
     //image resources
     public Sprite[] profiles; //can replace, not great..
+    public string[] profileNames; //can replace, not great..
 
 
     DialogueInteraction currentInteraction;
     private int progress;
+    private Animator anim;
 
     #region singleton
     public static DialogueBox singleton;
@@ -22,6 +25,7 @@ public class DialogueBox : MonoBehaviour
         if(singleton == null)
         {
             singleton = this;
+            Application.targetFrameRate = 60;
 
         }
         else
@@ -31,6 +35,10 @@ public class DialogueBox : MonoBehaviour
     }
     #endregion
 
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
     public void DialogueInteract(DialogueInteraction toInvoke)
     {
         InvokeDialogue(toInvoke);
@@ -43,6 +51,7 @@ public class DialogueBox : MonoBehaviour
         {
             currentInteraction = toInvoke;
             //animate open the dialogue box
+            anim.SetBool("IsOpen", true);
         }
     }
 
@@ -53,13 +62,16 @@ public class DialogueBox : MonoBehaviour
             
             DialogueBlurb currentBlurb = currentInteraction.dialogueSet[progress];
             boxText.text = currentBlurb.text;
+            nameText.text = profileNames[(int)currentBlurb.profile];
             profileImage.sprite = profiles[(int)currentBlurb.profile];
+            progress++;
         }
         else if(progress >= currentInteraction.dialogueSet.Length)
         {
             progress = 0;
             currentInteraction = null;
             //animate close the dialoguebox
+            anim.SetBool("IsOpen", false);
         }
     }
 
@@ -77,8 +89,8 @@ public struct DialogueBlurb
 public enum DialogueProfile
 {
     Knight,
+    James,
     Swarnya,
     Alice,
-    Candra,
-    James
+    Candra
 }

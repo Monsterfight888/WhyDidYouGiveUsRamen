@@ -24,7 +24,7 @@ public class Interactable : MonoBehaviour
         }
     }
 
-    public void Interact(TopDownPlayer interacted)
+    public virtual void Interact(TopDownPlayer interacted)
     {
         Debug.Log("Interacted!");
     }
