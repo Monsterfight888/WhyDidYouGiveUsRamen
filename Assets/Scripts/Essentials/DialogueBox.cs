@@ -132,4 +132,5 @@ public enum DialogueProfile
     Alice,
     Candra,
     Knight,
+    Evan,
 }

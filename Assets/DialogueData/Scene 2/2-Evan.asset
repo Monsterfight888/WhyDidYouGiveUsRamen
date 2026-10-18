@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6842d93bcd9708847aeca8e0e604e25c, type: 3}
+  m_Name: 2-Evan
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueInteraction
+  dialogueSet:
+  - text: 'Have you found your way out of the HUB building? '
+    profile: 1
+  - text: Try heading down to the bottom of this building to get out!
+    profile: 1
+  - text: I heard there's some famous cherry trees northeast in the Quad
+    profile: 1
+  - text: 'Maybe you could make some utensils there? '
+    profile: 1
+  - text: (Do not try this at home)
+    profile: 2
