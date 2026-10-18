@@ -374,7 +374,8 @@ MonoBehaviour:
   - {fileID: -1096117643, guid: a19a0579055043848b02c2d1920126db, type: 3}
   - {fileID: 951894935, guid: a19a0579055043848b02c2d1920126db, type: 3}
   pressesPerBite: 2
-  doneDialogue: {fileID: 0}
+  doneDialogue: {fileID: 11400000, guid: 2e757f87458cb1740ae00a8e290dddc1, type: 2}
+  sceneToLoad: 3-outside-hub
 --- !u!1001 &980595488
 PrefabInstance:
   m_ObjectHideFlags: 0
