@@ -12,6 +12,7 @@ public class Goose : TopDownCharacter
     {
         base.Start();
         baseSpeed = speed;
+        timer = timeBetweenDrop;
     }
     public override Vector2 CalcMoveVector()
     {

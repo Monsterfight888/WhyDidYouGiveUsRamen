@@ -1,16 +1,28 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GooseGamemode : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public static GooseGamemode instance;
+    public float score = 0;
+    public Text scoreText;
+
+    public void Awake()
     {
-        
+        instance = this;
+    }
+    private void Start()
+    {
+        scoreText = GetComponent<Text>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        scoreText.text = "Eggs: " + score;
+        if (score >= 5)
+        {
+            SceneManager.LoadScene("");
+        }
     }
 }
