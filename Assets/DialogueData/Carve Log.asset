@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6842d93bcd9708847aeca8e0e604e25c, type: 3}
+  m_Name: Carve Log
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueInteraction
+  dialogueSet:
+  - text: We need a bowl to eat the ramen in, luckily we found a log of wood in the quad
+    profile: 1
+  - text: Press "E" to carve the log of wood into a bowl for the ramen
+    profile: 1
