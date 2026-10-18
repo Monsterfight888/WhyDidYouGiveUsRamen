@@ -1,6 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+[System.Serializable]
+public struct DialogueSprites
+{
+    public Sprite[] sprites;
+}
+
 public class DialogueBox : MonoBehaviour
 {
     //to set
@@ -9,12 +15,14 @@ public class DialogueBox : MonoBehaviour
     public Image profileImage;
 
     //image resources
-    public Sprite[] profiles; //can replace, not great..
+    public DialogueSprites[] dialogueSprites;
     public string[] profileNames; //can replace, not great..
 
 
     DialogueInteraction currentInteraction;
     private int progress;
+    private int lastProfile = -1;
+    private int consecutiveSameProfiles = 0;
     private Animator anim;
 
     #region singleton
@@ -59,17 +67,39 @@ public class DialogueBox : MonoBehaviour
     {
         if (currentInteraction != null && progress < currentInteraction.dialogueSet.Length) 
         {
-            
             DialogueBlurb currentBlurb = currentInteraction.dialogueSet[progress];
+
+            if (lastProfile == (int)currentBlurb.profile)
+            {
+                //same profile as last, increment.
+                consecutiveSameProfiles++;
+                if (consecutiveSameProfiles >= dialogueSprites[(int)currentBlurb.profile].sprites.Length)
+                {
+                    consecutiveSameProfiles = 0;
+                }
+            }
+            else
+            {
+                consecutiveSameProfiles = 0;
+            }
+
+            //text set
             boxText.text = currentBlurb.text;
             nameText.text = profileNames[(int)currentBlurb.profile];
-            profileImage.sprite = profiles[(int)currentBlurb.profile];
+
+            //image set
+            profileImage.sprite = dialogueSprites[(int)currentBlurb.profile].sprites[consecutiveSameProfiles];
+
+            
+
             progress++;
+            lastProfile = (int)currentBlurb.profile;
         }
         else if(progress >= currentInteraction.dialogueSet.Length)
         {
             progress = 0;
             currentInteraction = null;
+            lastProfile = -1;
             //animate close the dialoguebox
             anim.SetBool("IsOpen", false);
         }
@@ -88,9 +118,9 @@ public struct DialogueBlurb
 
 public enum DialogueProfile
 {
-    Knight,
     James,
     Swarnya,
     Alice,
-    Candra
+    Candra,
+    Knight,
 }
