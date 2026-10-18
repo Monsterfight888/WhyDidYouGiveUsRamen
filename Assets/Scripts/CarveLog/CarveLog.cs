@@ -19,6 +19,12 @@ public class CarveLog : Interactable
    {
       sr = GetComponent<SpriteRenderer>();
       sr.sprite = stages[0];
+
+      if (ProgressionManager.singleton.quad == true)
+      {
+          SceneManager.LoadScene("3-outside-hub");
+
+      }
    }
 
    public override void Interact(TopDownPlayer player)
