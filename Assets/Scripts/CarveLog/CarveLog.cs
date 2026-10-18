@@ -19,20 +19,33 @@ public class CarveLog : Interactable
 
    public override void Interact(TopDownPlayer player)
    {
-      if (stage >= stages.Length - 1)
+      switch (state)
       {
-         DialogueBox.singleton.DialogueInteract(doneDialogue, TransitionToNextScene);
-         return;
-      }
+         case State.Intro:
+            // first E opens it each E advances when it closes, carving starts
+            DialogueBox.singleton.DialogueInteract(introDialogue, () => state = State.Carving);
+            break;
 
-      presses++;
-      if (presses >= pressesPerBite)
-      {
-         presses = 0;
-         stage++;
-         sr.sprite = stages[stage];
-         if (stage == stages.Length - 1)
-            DialogueBox.singleton.DialogueInteract(doneDialogue, TransitionToNextScene);
+         case State.Carving:
+            presses++;
+            if (presses >= pressesPerBite)
+            {
+               presses = 0;
+               stage++;
+               sr.sprite = stages[stage];
+               if (stage == stages.Length - 1)
+               {
+                  state = State.Done;
+                  if (doneDialogue == null) TransitionToNextScene();
+                  else DialogueBox.singleton.DialogueInteract(doneDialogue, TransitionToNextScene);
+               }
+            }
+            break;
+
+         case State.Done:
+            if (doneDialogue != null)
+               DialogueBox.singleton.DialogueInteract(doneDialogue, TransitionToNextScene);
+            break;
       }
    }
 
