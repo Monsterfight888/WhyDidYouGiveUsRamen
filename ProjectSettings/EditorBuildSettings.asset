@@ -11,5 +11,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Testing/Cutscene.unity
     guid: 2b66b1a0516e5b24ea39aedabf760c61
+  - enabled: 1
+    path: Assets/Scenes/3-outside-hub.unity
+    guid: 0f65254b42f477049b0bb4555a17fec9
+  - enabled: 1
+    path: Assets/Scenes/BirdLevel.unity
+    guid: be495eb71486c35488f8ca814cb290fd
+  - enabled: 1
+    path: Assets/Scenes/After Finishing.unity
+    guid: 9eac6269d498b6e4ab330bbeb43e2886
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
