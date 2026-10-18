@@ -11,18 +11,24 @@ public class GooseGamemode : MonoBehaviour
     public void Awake()
     {
         instance = this;
+        if (ProgressionManager.singleton.grove == true)
+        {
+            SceneManager.LoadScene("3-outside-hub");
+
+        }
     }
     private void Start()
     {
         scoreText = GetComponent<Text>();
     }
 
-    private void Update()
+    public void Update()
     {
         scoreText.text = "Eggs: " + score;
         if (score >= 5)
         {
-            SceneManager.LoadScene("");
+            ProgressionManager.singleton.grove = true;
+            SceneManager.LoadScene("3-outside-hub");
         }
     }
 }

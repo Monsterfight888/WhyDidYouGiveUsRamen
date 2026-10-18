@@ -29,5 +29,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/8-End Cutscene.unity
     guid: ed18c6c99a4e6470891b622c96346306
+  - enabled: 1
+    path: Assets/Scenes/WaterLevel.unity
+    guid: c49bafe562141414db15a82a1663e11d
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
