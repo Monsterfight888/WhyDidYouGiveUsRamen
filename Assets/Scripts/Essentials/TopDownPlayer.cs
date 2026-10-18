@@ -16,6 +16,8 @@ public class TopDownPlayer : TopDownCharacter
     private InputActionMap inpAsset;
     private InputAction mvAction;
     private InputAction interactAction;
+    private Animator anim;
+    private SpriteRenderer sr;
 
     private Interactable hoveringInteractable;
 
@@ -42,6 +44,8 @@ public class TopDownPlayer : TopDownCharacter
         inpAsset = GetComponent<PlayerInput>().currentActionMap;
         mvAction = inpAsset.FindAction("Movement");
         interactAction = inpAsset.FindAction("Interact");
+        anim = GetComponent<Animator>();
+        sr = transform.GetChild(1).GetComponent<SpriteRenderer>();
     }
     public override Vector2 CalcMoveVector()
     {
@@ -49,10 +53,40 @@ public class TopDownPlayer : TopDownCharacter
         {
             return Vector2.zero;
         }
-        moveVector = Vector2.Lerp(mvAction.ReadValue<Vector2>() * speed, moveVector, movementDamping);
 
+        Vector2 inp = mvAction.ReadValue<Vector2>();
 
-        return mvAction.ReadValue<Vector2>() * speed;
+        //sprite side flipping
+        if (inp.x > 0)
+        {
+            sr.flipX = false;
+        }
+        else if(inp.x < 0)
+        {
+            sr.flipX = true;
+        }
+        else
+        {
+            sr.flipX = false;
+        }
+
+        if (inp.x != 0)
+        {
+            anim.SetBool("RunSide", true);
+            anim.SetBool("RunTop", false);
+        }
+        else if(inp.y != 0)
+        {
+            anim.SetBool("RunTop", true);
+            anim.SetBool("RunSide", false);
+        }
+        else
+        {
+            anim.SetBool("RunSide", false);
+            anim.SetBool("RunTop", false);
+        }
+
+        return inp * speed;
     }
 
     public override void FixedUpdate()
