@@ -72,19 +72,30 @@ public class TopDownPlayer : TopDownCharacter
 
         if (inp.x != 0)
         {
-            anim.SetBool("RunSide", true);
             anim.SetBool("RunTop", false);
+            anim.SetBool("RunSide", true);
+            anim.SetBool("isDown", false);
         }
-        else if(inp.y != 0)
+        else if(inp.y > 0)
         {
             anim.SetBool("RunTop", true);
             anim.SetBool("RunSide", false);
+            anim.SetBool("isDown", false);
+        }
+        else if(inp.y < 0)
+        {
+            anim.SetBool("RunTop", false);
+            anim.SetBool("RunSide", false);
+            anim.SetBool("isDown", true);
         }
         else
         {
             anim.SetBool("RunSide", false);
             anim.SetBool("RunTop", false);
+            anim.SetBool("isDown", false);
         }
+        
+
 
         return inp * speed;
     }

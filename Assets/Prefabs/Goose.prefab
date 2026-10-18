@@ -198,6 +198,9 @@ MonoBehaviour:
   movementDamping: 0.8
   moveVector: {x: 0, y: 0}
   moveDir: {x: 0, y: 0}
+  dropPref: {fileID: 5548522768456324295, guid: 8580f8fe86a20c246bb521108e0132d6, type: 3}
+  timeBetweenDrop: 0.5
+  baseSpeed: 0
 --- !u!1 &8431710463650577673
 GameObject:
   m_ObjectHideFlags: 0
