@@ -2,6 +2,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
+
 public class TopDownPlayer : MonoBehaviour
 {
     //configurable
@@ -59,6 +61,10 @@ public class TopDownPlayer : MonoBehaviour
             Interactable nextInteractable = interactables[minDistIndex].GetComponent<Interactable>();
             if(nextInteractable != hoveringInteractable)
             {
+                if(hoveringInteractable != null)
+                {
+                    hoveringInteractable.OnHover(false);
+                }
                 hoveringInteractable = nextInteractable;
                 hoveringInteractable.OnHover(true);
             }
