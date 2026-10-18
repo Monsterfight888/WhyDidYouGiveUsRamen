@@ -51,9 +51,9 @@ MonoBehaviour:
     profile: 3
   - text: (Sorry)
     profile: 2
-  - text: 'We don''t have a prize for you but you''d support a really cool '
+  - text: 'We don''t have a prize for you but you''d support a really cool DubHacks project '
     profile: 0
-  - text: DubHacks project so help us out
+  - text: So help us out
     profile: 0
   - text: You got this
     profile: 1
