@@ -24,6 +24,13 @@ public class WaterCatchGameManager : MonoBehaviour
     {
         if (bowlObject.TryGetComponent(out BowlMovement bowl)) bowl.enabled = false;
         
+        StartCoroutine(DelayedDialogueStart());
+    }
+
+    private IEnumerator DelayedDialogueStart()
+    {
+        yield return null; 
+        
         DialogueBox.singleton.DialogueInteract(introDialogue, StartMiniGame);
     }
 
@@ -71,6 +78,7 @@ public class WaterCatchGameManager : MonoBehaviour
     private void EndMiniGame()
     {
         gameActive = false;
+        
         if (spawnRoutine != null) StopCoroutine(spawnRoutine);
         
         if (bowlObject.TryGetComponent(out BowlMovement bowl)) bowl.enabled = false;

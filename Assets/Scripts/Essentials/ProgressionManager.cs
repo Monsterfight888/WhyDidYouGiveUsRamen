@@ -28,7 +28,7 @@ public class ProgressionManager : MonoBehaviour
     {
         if(scene.name == "3-outside-hub")
         {
-            if (grove/* && quad && drumheller*/)
+            if (grove /* && drumheller && quad*/)
             {
                 GameObject.Find("toInside").GetComponent<InteractSceneChange>().sceneName = "6-After Finishing";
             }
