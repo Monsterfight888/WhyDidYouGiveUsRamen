@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6842d93bcd9708847aeca8e0e604e25c, type: 3}
+  m_Name: 6-After Finishing
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueInteraction
+  dialogueSet:
+  - text: Oh wow
+    profile: 1
+  - text: That's a really nice bowl of ramen!!
+    profile: 1
+  - text: The spoon turned out so well too
+    profile: 1
+  - text: This looks so good
+    profile: 1
+  - text: What a sight for sore eyes
+    profile: 0
+  - text: (I've been staring at a screen for 16 hours straight)
+    profile: 0
+  - text: Ah, well
+    profile: 0
+  - text: That egg makes the effort so worth it
+    profile: 0
+  - text: You had that in the BAG LET'S GOOOO
+    profile: 3
+  - text: Or should I say the bowl?
+    profile: 3
+  - text: We just wrapped up our project too!
+    profile: 2
+  - text: Let's head to the closing ceremony
+    profile: 2
+  - text: Hand us the bowl and we'll show you what we've got!
+    profile: 2
+  - text: We're so proud of you!!!
+    profile: 3
+  - text: We'll meet you upstairs when you're ready!
+    profile: 3
