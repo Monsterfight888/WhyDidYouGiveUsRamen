@@ -1739,6 +1739,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4722348769743434759, guid: d3f797e73c4b73a429ed30f436000178, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4722348769743434759, guid: d3f797e73c4b73a429ed30f436000178, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 5415798213262292941, guid: d3f797e73c4b73a429ed30f436000178, type: 3}
       propertyPath: m_Name
       value: SwarnyaNPC

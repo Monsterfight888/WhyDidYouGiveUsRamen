@@ -7,7 +7,7 @@ public class InteractDialogue : Interactable
 
     // Leave empty for a dialogue with no scene change
     public string sceneToLoad;
-
+    
     public override void Interact(TopDownPlayer interacted)
     {
         if (string.IsNullOrEmpty(sceneToLoad))
