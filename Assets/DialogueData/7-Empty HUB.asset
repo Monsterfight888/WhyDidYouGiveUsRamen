@@ -10,14 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6842d93bcd9708847aeca8e0e604e25c, type: 3}
-  m_Name: 2-Alice
+  m_Name: 7-Empty HUB
   m_EditorClassIdentifier: Assembly-CSharp::DialogueInteraction
   dialogueSet:
-  - text: I'm SO hungry
-    profile: 2
-  - text: I can taste that indomie
-    profile: 2
-  - text: Please lock in
-    profile: 2
-  - text: Like, right now
-    profile: 2
+  - text: Hey little knight
+    profile: 5
+  - text: Made it through okay?
+    profile: 5
+  - text: You know
+    profile: 5
+  - text: The boxing team could use a guy like you
+    profile: 5
+  - text: Just a thought!
+    profile: 5
+  - text: The others are upstairs at the closing ceremony
+    profile: 5
+  - text: Make your way up when you're ready!
+    profile: 5
