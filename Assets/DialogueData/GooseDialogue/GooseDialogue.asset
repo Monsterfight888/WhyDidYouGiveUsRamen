@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogueSet:
   - text: Sir knight, ahead of you is the golden goose
     profile: 0
-  - text: I think that with five golden eggs we will be able to make an excellent ramen!
+  - text: I think that with two golden eggs we will be able to make an excellent ramen!
     profile: 0
   - text: Just make sure not to collect any goose poo
     profile: 0
