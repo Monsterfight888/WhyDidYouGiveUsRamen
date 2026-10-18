@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6842d93bcd9708847aeca8e0e604e25c, type: 3}
+  m_Name: 7-Empty HUB
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueInteraction
+  dialogueSet:
+  - text: Hey little knight
+    profile: 5
+  - text: Made it through okay?
+    profile: 5
+  - text: You know
+    profile: 5
+  - text: The boxing team could use a guy like you
+    profile: 5
+  - text: Just a thought!
+    profile: 5
+  - text: The others are upstairs at the closing ceremony
+    profile: 5
+  - text: Make your way up when you're ready!
+    profile: 5

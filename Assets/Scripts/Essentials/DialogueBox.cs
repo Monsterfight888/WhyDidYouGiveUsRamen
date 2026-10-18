@@ -42,6 +42,10 @@ public class DialogueBox : MonoBehaviour
         {
             Debug.LogError("MORE THAN ONE DIALOGUE BOX EXISTS");
         }
+        boxText.enabled = false;
+        profileImage.enabled = false;
+        nameText.enabled = false;
+        GetComponent<Image>().enabled = false;
     }
     #endregion
 
@@ -58,6 +62,12 @@ public class DialogueBox : MonoBehaviour
 
     public void InvokeDialogue(DialogueInteraction toInvoke, Action onComplete = null)
     {
+        boxText.enabled = true;
+        profileImage.enabled = true;
+        GetComponent<Image>().enabled = true;
+        nameText.enabled = true;
+
+        gameObject.SetActive(true);
         if (currentInteraction == null)
         {
             currentInteraction = toInvoke;
@@ -132,4 +142,5 @@ public enum DialogueProfile
     Alice,
     Candra,
     Knight,
+    Evan,
 }
