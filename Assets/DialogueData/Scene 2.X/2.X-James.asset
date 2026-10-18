@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6842d93bcd9708847aeca8e0e604e25c, type: 3}
+  m_Name: 2.X-James
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueInteraction
+  dialogueSet:
+  - text: What do you think is the best way to optimize DubCoins
+    profile: 0
+  - text: Like, hypothetically speaking
+    profile: 0
+  - text: If you saw a QR code through a window of a random conference
+    profile: 0
+  - text: And scanning it would give you DubCoins
+    profile: 0
+  - text: Would you scan it?
+    profile: 0
+  - text: It's something to think about
+    profile: 0

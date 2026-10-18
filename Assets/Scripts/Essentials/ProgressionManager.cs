@@ -31,6 +31,9 @@ public class ProgressionManager : MonoBehaviour
             if (grove /* && drumheller && quad*/)
             {
                 GameObject.Find("toInside").GetComponent<InteractSceneChange>().sceneName = "6-After Finishing";
+            } else if (grove || quad || drumheller)
+            {
+                GameObject.Find("toInside").GetComponent<InteractSceneChange>().sceneName = "2.X-Partial Completion";
             }
         }
     }
