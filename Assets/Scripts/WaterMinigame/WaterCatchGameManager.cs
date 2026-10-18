@@ -7,7 +7,6 @@ public class WaterCatchGameManager : MonoBehaviour
 {
     public DialogueInteraction introDialogue;
     public DialogueInteraction outroDialogue;
-    public string nextSceneName;
 
     public GameObject bowlObject;
     public GameObject dropPrefab;
@@ -39,6 +38,11 @@ public class WaterCatchGameManager : MonoBehaviour
         if (DialogueBox.IsActive && Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
         {
             DialogueBox.singleton.ContinueDialogue();
+        }
+        if (ProgressionManager.singleton.drumheller == true)
+        {
+            SceneManager.LoadScene("3-outside-hub");
+
         }
     }
 
@@ -91,7 +95,8 @@ public class WaterCatchGameManager : MonoBehaviour
 
     private void TransitionToNextScene()
     {
-        SceneManager.LoadScene(nextSceneName);
+        ProgressionManager.singleton.drumheller = true;
+        SceneManager.LoadScene("3-outside-hub");
     }
 }
 
