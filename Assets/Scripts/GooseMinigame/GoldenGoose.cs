@@ -10,6 +10,11 @@ public class GoldenGoose : Goose
 
     public Transform arrow;
 
+
+    public override void Awake()
+    {
+        //dont destroy
+    }
     public override void Start()
     {
         base.Start();
@@ -59,6 +64,17 @@ public class GoldenGoose : Goose
 
     public override Vector2 CalcMoveVector()
     {
-        return Vector2.Normalize(transform.position - TopDownPlayer.player.transform.position) * speed;
+        moveDir = Vector2.Normalize(transform.position - TopDownPlayer.player.transform.position) * speed;
+
+        if (moveDir.x >= 0)
+        {
+            sr.flipX = true;
+        }
+        else
+        {
+            sr.flipX = false;
+        }
+
+        return moveDir;
     }
 }

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2911946900031576792
+--- !u!1 &2525293886728169557
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,43 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7489608031623302015}
-  - component: {fileID: 6185798173040178835}
-  - component: {fileID: 4662222001526553455}
-  - component: {fileID: 7978715989098660289}
-  - component: {fileID: 1858378511050982013}
-  - component: {fileID: 6868716158431394902}
+  - component: {fileID: 7279990319508603908}
+  - component: {fileID: 2074213098227425630}
   m_Layer: 6
-  m_Name: Goose
+  m_Name: Goos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7489608031623302015
+--- !u!4 &7279990319508603908
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2911946900031576792}
+  m_GameObject: {fileID: 2525293886728169557}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.79, y: -0.12, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.79, y: 0.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1254524708577219236}
-  m_Father: {fileID: 0}
+  m_Children: []
+  m_Father: {fileID: 7489608031623302015}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &6185798173040178835
+--- !u!212 &2074213098227425630
 SpriteRenderer:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2911946900031576792}
+  m_GameObject: {fileID: 2525293886728169557}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -86,17 +81,55 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: c8b1d10e182c6b444a547c42b0828feb, type: 3}
-  m_Color: {r: 0.8616352, g: 0.6904819, b: 0.0081285, a: 1}
+  m_Sprite: {fileID: 6266660003830030844, guid: c293c232e762bc441a0feffc03fc9dea, type: 3}
+  m_Color: {r: 0.3962264, g: 0.2878248, b: 0.2878248, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3.1, y: 2.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!1 &2911946900031576792
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7489608031623302015}
+  - component: {fileID: 4662222001526553455}
+  - component: {fileID: 7978715989098660289}
+  - component: {fileID: 1858378511050982013}
+  - component: {fileID: 6868716158431394902}
+  - component: {fileID: 6480985192102419149}
+  m_Layer: 6
+  m_Name: Goose
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7489608031623302015
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2911946900031576792}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.79, y: -0.12, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1254524708577219236}
+  - {fileID: 7279990319508603908}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &4662222001526553455
 Rigidbody2D:
   serializedVersion: 5
@@ -201,6 +234,29 @@ MonoBehaviour:
   dropPref: {fileID: 5548522768456324295, guid: 8580f8fe86a20c246bb521108e0132d6, type: 3}
   timeBetweenDrop: 0.5
   baseSpeed: 0
+  sr: {fileID: 2074213098227425630}
+--- !u!95 &6480985192102419149
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2911946900031576792}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c225f3ace48f6fe43911db059e6d1050, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8431710463650577673
 GameObject:
   m_ObjectHideFlags: 0
