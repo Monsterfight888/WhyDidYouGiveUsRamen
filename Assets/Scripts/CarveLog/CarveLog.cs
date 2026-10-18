@@ -1,15 +1,17 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CarveLog : Interactable
 {
-   public Sprite[] stages; // log_0 through log_6
+   public Sprite[] stages;              // log_0 ... log_6
    public int pressesPerBite = 2;
    public DialogueInteraction doneDialogue;
+   public string sceneToLoad = "3-outside-hub";
 
    SpriteRenderer sr;
    int stage, presses;
 
-   void Awake()      
+   void Awake()
    {
       sr = GetComponent<SpriteRenderer>();
       sr.sprite = stages[0];
@@ -19,7 +21,7 @@ public class CarveLog : Interactable
    {
       if (stage >= stages.Length - 1)
       {
-         DialogueBox.singleton.DialogueInteract(doneDialogue);
+         DialogueBox.singleton.DialogueInteract(doneDialogue, TransitionToNextScene);
          return;
       }
 
@@ -30,7 +32,14 @@ public class CarveLog : Interactable
          stage++;
          sr.sprite = stages[stage];
          if (stage == stages.Length - 1)
-            DialogueBox.singleton.DialogueInteract(doneDialogue);
+            DialogueBox.singleton.DialogueInteract(doneDialogue, TransitionToNextScene);
       }
+   }
+
+   void TransitionToNextScene()
+   {
+      if (ProgressionManager.singleton != null)
+         ProgressionManager.singleton.quad = true;  
+      SceneManager.LoadScene(sceneToLoad);
    }
 }
