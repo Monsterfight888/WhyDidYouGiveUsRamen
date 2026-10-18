@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6842d93bcd9708847aeca8e0e604e25c, type: 3}
+  m_Name: 1-Introduction
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueInteraction
+  dialogueSet:
+  - text: Yo what's up we have a quest for you
+    profile: 0
+  - text: We really need a knight to help us out
+    profile: 0
+  - text: Please help
+    profile: 0
+  - text: So, we came to this hackathon, and they gave us this instant noodle pack right
+    profile: 2
+  - text: '(I think it''s indomie) '
+    profile: 2
+  - text: And I really want indomie
+    profile: 2
+  - text: But we don't have hot water??
+    profile: 2
+  - text: If you think about it
+    profile: 1
+  - text: Our project will be in hot water in 63 minutes if you don't lock in
+    profile: 1
+  - text: Yeah so anyway
+    profile: 2
+  - text: We have a quest for you
+    profile: 3
+  - text: Go outside
+    profile: 3
+  - text: (Sorry)
+    profile: 2
+  - text: Get some things to make this ramen
+    profile: 3
+  - text: Maybe something like...
+    profile: 3
+  - text: We need a bowl and utensils
+    profile: 1
+  - text: A nice ramen egg
+    profile: 0
+  - text: And hot water!!
+    profile: 3
+  - text: (Sorry)
+    profile: 2
+  - text: 'We don''t have a prize for you but you''d support a really cool '
+    profile: 0
+  - text: DubHacks project so help us out
+    profile: 0
+  - text: You got this
+    profile: 1
+  - text: Good luck!!
+    profile: 3

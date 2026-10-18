@@ -10,22 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6842d93bcd9708847aeca8e0e604e25c, type: 3}
-  m_Name: 1-Introduction
+  m_Name: 2-Alice
   m_EditorClassIdentifier: Assembly-CSharp::DialogueInteraction
   dialogueSet:
-  - text: Yo what's up we have a quest for you
-    profile: 0
-  - text: We really need a knight to help us out
-    profile: 0
-  - text: Please help
-    profile: 0
-  - text: So, we came to this hackathon, and they gave us this instant noodle pack right
+  - text: I'm SO hungry
     profile: 2
-  - text: '(I think it''s indomie) '
+  - text: I can taste that indomie
     profile: 2
-  - text: And I really want indomie
+  - text: Please lock in
     profile: 2
-  - text: But there is no hot water in the hub..
-    profile: 2
-  - text: 
-    profile: 1

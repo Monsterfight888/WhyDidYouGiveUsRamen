@@ -22,6 +22,8 @@ public class TopDownPlayer : MonoBehaviour
 
     private Interactable hoveringInteractable;
 
+    private bool MovementLocked => DialogueBox.IsActive;
+
     public void Start() 
     {
         rb = GetComponent<Rigidbody2D>();
@@ -33,6 +35,11 @@ public class TopDownPlayer : MonoBehaviour
 
     public void Update()
     {
+        if (MovementLocked) // In dialogue or can't talk
+        {
+            moveVector = Vector2.zero;
+            return;
+        }
         moveVector = Vector2.Lerp(mvAction.ReadValue<Vector2>() * speed, moveVector, movementDamping);
 
 

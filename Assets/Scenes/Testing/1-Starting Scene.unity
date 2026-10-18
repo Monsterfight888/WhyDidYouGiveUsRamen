@@ -1038,7 +1038,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 12
+  m_SortingOrder: 11
   m_MaskInteraction: 0
   m_Sprite: {fileID: 1930918285617392223, guid: 9d1f4fa84a86ce94baf8af92c5bd22e7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1463,7 +1463,7 @@ Transform:
   m_GameObject: {fileID: 1852943598}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.59, y: 3.13, z: 0}
+  m_LocalPosition: {x: 0.43, y: 3.09, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1560,6 +1560,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractDialogue
   thisInteraction: {fileID: 11400000, guid: b44a56ded43684db08295b306ff4e85c, type: 2}
+  sceneToLoad: 2-After Starting Scene
 --- !u!4 &1880244630
 Transform:
   m_ObjectHideFlags: 0

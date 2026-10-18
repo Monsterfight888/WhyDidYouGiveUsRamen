@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,27 +19,28 @@ public class DialogueBox : MonoBehaviour
     public DialogueSprites[] dialogueSprites;
     public string[] profileNames; //can replace, not great..
 
-
     DialogueInteraction currentInteraction;
+    private Action onComplete; // runs once when the dialogue finishes
     private int progress;
     private int lastProfile = -1;
     private int consecutiveSameProfiles = 0;
     private Animator anim;
+
+    public static bool IsActive => singleton != null && singleton.currentInteraction != null;
 
     #region singleton
     public static DialogueBox singleton;
 
     private void Awake()
     {
-        if(singleton == null)
+        if (singleton == null)
         {
             singleton = this;
             Application.targetFrameRate = 60;
-
         }
         else
         {
-            Debug.LogError("MORE THAN ONE DIALOGUE BOX EXITS");
+            Debug.LogError("MORE THAN ONE DIALOGUE BOX EXISTS");
         }
     }
     #endregion
@@ -47,17 +49,19 @@ public class DialogueBox : MonoBehaviour
     {
         anim = GetComponent<Animator>();
     }
-    public void DialogueInteract(DialogueInteraction toInvoke)
+
+    public void DialogueInteract(DialogueInteraction toInvoke, Action onComplete = null)
     {
-        InvokeDialogue(toInvoke);
+        InvokeDialogue(toInvoke, onComplete);
         ContinueDialogue();
     }
 
-    public void InvokeDialogue(DialogueInteraction toInvoke)
+    public void InvokeDialogue(DialogueInteraction toInvoke, Action onComplete = null)
     {
-        if(currentInteraction == null)
+        if (currentInteraction == null)
         {
             currentInteraction = toInvoke;
+            this.onComplete = onComplete;
             //animate open the dialogue box
             anim.SetBool("IsOpen", true);
         }
@@ -65,7 +69,9 @@ public class DialogueBox : MonoBehaviour
 
     public void ContinueDialogue()
     {
-        if (currentInteraction != null && progress < currentInteraction.dialogueSet.Length) 
+        if (currentInteraction == null) return;
+
+        if (progress < currentInteraction.dialogueSet.Length)
         {
             DialogueBlurb currentBlurb = currentInteraction.dialogueSet[progress];
 
@@ -90,23 +96,26 @@ public class DialogueBox : MonoBehaviour
             //image set
             profileImage.sprite = dialogueSprites[(int)currentBlurb.profile].sprites[consecutiveSameProfiles];
 
-            
-
             progress++;
             lastProfile = (int)currentBlurb.profile;
         }
-        else if(progress >= currentInteraction.dialogueSet.Length)
+        else
         {
+            //dialogue finished: reset state first
             progress = 0;
-            currentInteraction = null;
             lastProfile = -1;
+            consecutiveSameProfiles = 0;
+            currentInteraction = null;
+
             //animate close the dialoguebox
             anim.SetBool("IsOpen", false);
+
+            //then fire the callback (copy it first so it can't run twice)
+            Action callback = onComplete;
+            onComplete = null;
+            callback?.Invoke();
         }
     }
-
-    
-    
 }
 
 [System.Serializable]
